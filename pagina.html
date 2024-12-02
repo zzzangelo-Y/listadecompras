@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="superior">
+        <h1>Registro de compras</h1>
+        <div class="contenedor">
+            <span>Producto: <input type="text" name="product" id="product"></span>
+            <span>Cantidad: <input type="text" name="cantidad" id="cantidad"></span>
+            <button id="crear">Crear</button>
+        </div>
+    
+        <div class="principal">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

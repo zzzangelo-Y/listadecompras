@@ -1,0 +1,200 @@
+:root {
+    --primary-color: #00f0ff;
+    --secondary-color: #7d3eff;     
+    --background-dark: #0a0a1a;      
+    --text-light: #e0e0ff;           
+    --accent-glow: rgba(0, 240, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    overflow-x: hidden;
+}
+
+.superior {
+    width: 100%;
+    max-width: 700px;
+    background: linear-gradient(145deg, rgba(30,30,60,0.9) 0%, rgba(20,20,40,0.9) 100%);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.4),
+        0 5px 15px rgba(0,240,255,0.2);
+    border: 2px solid var(--primary-color);
+    transform: rotateX(10deg);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px var(--accent-glow);
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contenedor span {
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.contenedor input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(30,30,60,0.7);
+    border: 2px solid var(--primary-color);
+    color: var(--text-light);
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(0,240,255,0.2);
+}
+
+.contenedor input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 
+        0 0 15px var(--accent-glow),
+        0 0 25px rgba(125,62,255,0.3);
+}
+
+#crear {
+    width: 100%;
+    padding: 12px 15px;
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+    color: var(--background-dark);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0,240,255,0.4);
+}
+
+#crear:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 8px 25px rgba(0,240,255,0.5),
+        0 0 30px var(--accent-glow);
+}
+
+.principal {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: rgba(20,20,40,0.6);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,240,255,0.2);
+    color: var(--text-light);
+}
+
+th {
+    color: var(--background-dark);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr:hover {
+    background-color: rgba(30,30,60,0.8);
+}
+
+
+@media screen and (max-width: 768px) {
+    .superior {
+        margin: 20px;
+        padding: 20px;
+        transform: none;
+    }
+
+    .contenedor {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .contenedor input, #crear {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .superior {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(30,30,60,0.7);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+}
+
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 10px var(--accent-glow); }
+    50% { box-shadow: 0 0 20px var(--accent-glow); }
+}
+
+.superior {
+    animation: glowPulse 3s infinite;
+}
